@@ -1,0 +1,34 @@
+*{
+color:rgb(10, 10, 243);
+}
+
+.my{
+   background-color: rgba(136, 207, 152, 0.326);
+   border: 2vh solid;
+   border-color: rgba(97, 166, 112, 0.313);
+   padding:4svh ;
+   text-align: center;
+   border-spacing: 15svh;
+   transition:  0.35s ease-out;
+   
+
+}
+
+.my:hover{
+    text-shadow: 9px 4px 12px  rgb(0, 0, 0) ;
+  color:rgb(100, 0, 92);
+  border-color: rgba(97, 166, 112, 0.313);
+    background-color: rgba(80, 85, 33, 0.647);
+    transition:  0.25s ease-out;
+    border-radius: 25%;
+
+}
+
+.my:hover {
+
+    transform: scale(0.9);
+ 
+ }
+.my:hover ~ .my {
+    transform: scale(1.1);
+ }
