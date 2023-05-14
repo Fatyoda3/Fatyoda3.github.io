@@ -1,0 +1,103 @@
+*{
+    
+}
+
+.heading h1{
+    background-color: rgba(112, 158, 198, 0.05);
+    font-size: 5vh;
+    text-align: center;
+    font-weight: 400;
+    color: fuchsia;
+    box-shadow: 12px;
+    border:8px solid;
+    border-color: rgb(149, 248, 0,0.4);
+    border-radius: 60%;
+    border-right: none;
+    border-bottom: none;
+    padding: 8%;
+}
+
+.body {
+    background-color: rgba(17, 34, 50, 0.7);
+    text-align: center;
+    font-size: 35px;
+    word-spacing: 35px;
+    border: 7px groove;
+    padding: 7px;
+    border-radius: 15%;
+    border-color: rgb(0, 255, 242);
+    
+}
+.one{
+    color: rgb(195, 195, 25);
+    font-style: oblique;
+   
+    border-radius: 35%;
+    overflow: hidden;
+    text-align: left;
+    padding: 7px;
+    text-decoration: none;
+}
+.two{
+    color: rgb(168, 222, 237);
+    font-style: oblique;
+    
+    border-radius: 15%;
+    overflow: hidden;
+    text-align: right;
+    padding: 7px;
+    text-decoration: none;
+}
+.three{
+    color: rgb(205, 238, 15);
+    font-style: italic;
+    text-decoration:none;
+    border-radius: 15%;
+    overflow: hidden;
+    padding: 6px;
+    
+}
+.four{
+    color: rgb(159, 170, 97);
+    font-style: italic;
+    text-decoration: none;
+    border-radius: 17%;
+    overflow: hidden;
+    padding: 7px;
+
+}
+
+.finale p{
+    color:rgb(107, 195, 213);
+    background-color: rgba(41, 80, 112, 0.7);
+    text-align: justify;
+    text-transform: uppercase;
+font-size: 22px;
+border-radius: 17px;
+border-color: aquamarine;
+border:5px solid;
+padding: 12px;
+font-weight: bold;
+
+}
+.cookie{
+    position: relative;
+    text-align: center;
+    color: white;
+    border: 10px solid;
+    border-left: 0px;
+    border-right:0px ;
+    border-radius: 50%;
+    border-bottom-color: blue;
+    border-top-color: brown;
+    padding: 14px;
+  }
+.footer h3{
+    color:green;
+    background-color: rgba(104, 104, 195, 0.665);
+    text-align: center;
+    font-size: 42px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border:10px solid;
+}
