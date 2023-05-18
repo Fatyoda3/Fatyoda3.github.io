@@ -9,8 +9,11 @@ color:rgb(10, 158, 243);
    padding:4svh ;
    text-align: center;
    border-spacing: 15svh;
-   transition:  0.35s ease-out;
-   
+   transition:  0.55s ease-out;
+   display: flex;
+   justify-content: center;
+   align-items: bottom;
+   text-decoration: none;
 
 }
 
@@ -23,15 +26,9 @@ color:rgb(10, 158, 243);
     border-radius: 25%;
     border-bottom: none;
     border-top:none;
-    
+    transition: 600ms ease;
+   transform: scale(0.9);
+
 
 }
 
-.my:hover {
-
-    transform: scale(0.9);
- 
- }
-.my:hover ~ .my {
-    transform: scale(1.1);
- }

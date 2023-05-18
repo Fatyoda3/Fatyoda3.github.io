@@ -12,9 +12,11 @@ header{
     overflow: hidden;
     color: rgb(0, 255, 217);
     font-size: 3vh;
+    transition: 450ms all ease-in;
+
 }
 header:hover{
-    transition: 1s;
+    transition: 0.4s ease-in;
     background: -webkit-linear-gradient(#eee, #59f306);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -32,9 +34,10 @@ header:hover{
     border-left: none;
     border-right: none;
     border-radius: 3vh;
+    transition: 450ms ;
 }
 .story p:hover{
-    transition: 0.7s;
+    transition: 0.5s;
     background: -webkit-linear-gradient(#737378, #f3d706);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -46,15 +49,16 @@ header:hover{
 .poem{
     background-color: rgba(108, 179, 127, 0.5);
     border:2vh solid;
-    border-radius: 30vh;
-    font-size: 5vh;
+    border-radius: 25vh;
+    font-size: 3vh;
     text-align: center;
     padding: 2vh;
     border-color:rgb(0, 17, 255) ;
     border-left: none;
     border-right: none;
-    
+    transition: 450ms all ease-in;
 }
+
 
 
 .verse_1{
