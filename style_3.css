@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     background-size: cover;
 }
@@ -68,3 +69,75 @@ color:rgba(236, 135, 11, 0.918);
     color: darkblue;
     padding: 2vh;
 }
+=======
+*{
+    background-size: cover;
+}
+
+body{
+    background-attachment: fixed;
+    
+}
+
+.olist{
+
+    background-color: rgba(49, 172, 49, 0.326);
+    border-radius: 25%;
+    padding: 1vh;
+}
+.name{
+    text-align: center;
+    color: aqua;
+    background-color: rgba(0, 0, 255, 0.3);
+    border-radius: 4vh;
+    border-style: dashed;
+    border-left:none;
+    border-right: none;
+    overflow: hidden;
+padding: 2vh;
+}
+.alias{
+
+text-align: center;
+text-decoration-line: overline;
+color:antiquewhite;
+border-radius: 25%;
+background-color: rgba(199, 42, 42, 0.294);
+overflow-wrap:break-word ;
+}
+
+.finale{
+
+    text-align: center;
+    font-weight: 600;
+    color:rgb(11, 231, 239);
+    
+}
+.ulist{
+text-align: justify;
+background-color: rgba(137, 43, 226, 0.445);
+border-radius: 35%;
+padding: 2vh;
+border:2vh solid;
+border-color: rgba(0, 0, 0, 0.419);
+text-overflow: clip;
+text-transform: capitalize;
+font-size: 3vh;
+color:rgba(236, 135, 11, 0.918);
+
+}
+
+.dlist{
+
+    background-color: rgba(128, 255, 0, 0.4);
+    border-radius: 35%;
+    border: 4vh solid;
+    border-color: rgba(0, 38, 255, 0.395);
+    border-bottom: none;
+    border-top: none;
+    font-weight: 500;
+    font-size: 3vh;
+    color: darkblue;
+    padding: 2vh;
+}
+>>>>>>> 6119772 (hello I am fixing my old stuff)
