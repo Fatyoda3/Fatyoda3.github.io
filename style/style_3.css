@@ -1,94 +1,231 @@
+/* === BODY & GLOBAL === */
 body {
-  background-image: url("../assets/night.webp");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  font-family: Georgia, serif;
+  font-family: 'Georgia', serif;
+  background-image: url("../assets/night.webp");
   color: #fff;
   margin: 0;
-  padding: 20px;
+  padding: 0;
 }
 
-.main {
+/* === STORY PARAGRAPHS AND VERSES === */
+.story p,
+[class^="verse_"] {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transform: rotateZ(-1deg) translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  margin-top: -1vh; /* stack slightly */
+  z-index: 1;
+}
+
+.story p:nth-child(even),
+[class^="verse_"]:nth-of-type(even) {
+  transform: rotateZ(1deg) translateY(0);
+}
+
+.story p:hover,
+[class^="verse_"]:hover {
+  transform: scale(1.03) rotateZ(0deg) translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* STORY PARAGRAPH SPECIFIC */
+.story p {
+  text-align: justify;
+  color: #13049b;
+  background-color: rgba(122, 159, 159, 0.6);
+  font-size: 2.5vh;
+  font-weight: 500;
+  word-spacing: 0.2vh;
+  border: 0.6vh solid aqua;
   padding: 3vh;
+  border-radius: 3vh;
+  margin: 3vh auto;
+  max-width: 90vw;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  z-index: 1;
 }
 
-.paragraph {
-  background-color: rgba(223, 220, 245, 0.753);
-  border-radius: 15%;
-  padding: 2vh;
+.story p::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(135deg, #03f4fc, #0a1b85);
+  border-radius: 3vh;
+  z-index: -1;
+  opacity: 0.5;
+  animation: subtleGlow 6s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.story p:hover {
+  background-color: rgba(122, 159, 159, 0.2);
+  color: #000;
+  transform: scale(0.97);
+}
+
+/* POEM CONTAINER */
+.poem {
+  background-color: rgba(108, 179, 127, 0.5);
+  border-top: 2vh solid rgb(0, 17, 255);
+  border-bottom: 2vh solid rgb(0, 17, 255);
+  border-radius: 25vh;
+  font-size: 2.5vh;
   text-align: center;
-  color: rgb(132, 4, 252);
-  font-size: 2.5vh;
+  padding: 3vh;
+  transition: all 450ms ease-in;
+  margin: 4vh auto;
+  max-width: 95vw;
 }
 
-.name {
-  font-size: 3vh;
-  font-weight: bold;
-  color: #ff8c00;
+.poem h2 {
+  color: #fff897;
+  font-size: 4vh;
+  margin-bottom: 2vh;
 }
 
-.alias {
-  font-size: 2.5vh;
-  font-style: italic;
-  color: lightgreen;
+/* VERSE STYLING */
+[class^="verse_"] {
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  padding: 3vh 2vw;
+  margin: 2vh auto;
+  border-radius: 2vh;
+  max-width: 90vw;
+  font-size: 2.2vh;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.highlight {
-  color: aqua;
-  font-size: 3vh;
+[class^="verse_"]::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(135deg, #ffffff, #00ffff, #ff00ff, #ffff00);
+  border-radius: 3vh;
+  z-index: -1;
+  opacity: 0.4;
+  background-size: 200% 200%;
+  animation: subtleGlow 7s ease infinite;
 }
 
-.h2o {
-  font-size: 3vh;
-  background-color: rgba(4, 9, 41, 0.283);
-  color: rgb(237, 209, 172);
-  padding: 0.3vh 1vh;
-  border-radius: 1vh;
-}
+/* Individual Verse Colors */
+.verse_1 { color: #ffcc70; text-align: left; }
+.verse_2 { color: #ffaaff; text-align: left; }
+.verse_3 { color: #afffff; text-align: right; }
+.verse_4 { color: #bcff95; text-align: right; }
+.verse_5 { color: #a2a8d3; text-align: left; }
+.verse_6 { color: #f9f871; text-align: left; }
+.verse_7 { color: #fda4ba; text-align: right; }
+.verse_8 { color: #b0f2b4; text-align: right; }
 
-.olist ol {
-  text-align: left;
-  margin-left: 20%;
-  font-size: 2.5vh;
-}
-
-.quote {
-  color: rgb(12, 244, 132);
-}
-
-.finale {
-  margin-top: 4vh;
-}
-
-.ulist ul {
-  list-style-type: disc;
-  text-align: left;
-  margin-left: 20%;
-  font-size: 2.5vh;
-}
-
-.dlist-header {
-  background-color: rgba(228, 22, 22, 0.379);
-  border-radius: 15%;
-  padding: 1vh;
-  display: inline-block;
-  margin-top: 2vh;
-  font-size: 2.5vh;
-}
-
-.dlist {
-  margin-top: 1vh;
-  font-size: 2.3vh;
-  text-align: left;
-  margin-left: 20%;
-}
-
-.coming-soon {
-  display: block;
+/* HEADER */
+header {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 0, 255, 0.3);
+  border-radius: 25vh;
+  overflow: hidden;
+  color: rgb(0, 255, 217);
   font-size: 3vh;
-  color: aqua;
-  margin-top: 5vh;
+  transition: all 450ms ease-in;
+  margin: 4vh auto;
+  width: fit-content;
+  padding: 1.5vh 3vw;
+}
+
+header:hover {
+  background: -webkit-linear-gradient(#eee, #59f306);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === LISTS: STACKED & GLOWING === */
+
+ol, ul {
+  list-style: none;
+  padding-left: 0;
+  max-width: 90vw;
+  margin: 3vh auto;
+  position: relative;
+  font-size: 2.4vh;
+  font-weight: 500;
+  font-family: 'Georgia', serif;
+}
+
+ol li, ul li {
+  position: relative;
+  background-color: rgba(122, 159, 159, 0.6);
+  border: 0.6vh solid aqua;
+  border-radius: 3vh;
+  padding: 2.5vh 3vh;
+  margin-top: -2vh; /* overlap */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  color: #13049b;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+  user-select: none;
+  transform-origin: left center;
+  /* slight random rotation effect based on odd/even */
+  transform: rotateZ(-1deg);
+}
+
+ol li:nth-child(even),
+ul li:nth-child(even) {
+  transform: rotateZ(1deg);
+}
+
+ol li:first-child,
+ul li:first-child {
+  margin-top: 0;
+}
+
+ol li:hover,
+ul li:hover {
+  z-index: 10 !important;
+  transform: scale(1.05) rotateZ(0deg) translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  background-color: rgba(122, 159, 159, 0.3);
+  color: #000;
+}
+
+/* Add glowing gradient border on list items */
+ol li::before,
+ul li::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 3vh;
+  background: linear-gradient(135deg, #03f4fc, #0a1b85);
+  opacity: 0.4;
+  z-index: -1;
+  animation: subtleGlow 6s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+/* === ANIMATION === */
+@keyframes subtleGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

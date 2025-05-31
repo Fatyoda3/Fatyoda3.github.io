@@ -1,37 +1,95 @@
-/* Global text color */
+/* Reset and global styles */
 * {
-  color: rgb(10, 158, 243);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Container styling */
-.my {
-  background-color: rgba(136, 207, 152, 0.326);
-  border: 2vh solid rgba(97, 166, 112, 0.313);
-  padding: 4svh;
-  text-align: center;
-  transition: 0.55s ease-out;
+body, html {
+  height: 100%;
+}
+
+/* Background */
+.background {
+  background: url("../assets/night.webp") no-repeat center center fixed;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  min-height: 100vh;
+  padding: 2rem;
 }
 
-/* Hover effects */
-.my:hover {
-  text-shadow: 9px 4px 12px rgb(0, 0, 0);
-  color: rgb(100, 0, 92);
-  background-color: rgba(80, 85, 33, 0.647);
-  border-color: rgba(97, 166, 112, 0.313);
-  border-radius: 25%;
-  border-top: none;
-  border-bottom: none;
-  transform: scale(0.9);
-  transition: 0.6s ease;
+/* Glowing border wrapper */
+.glow-wrap {
+  position: relative;
+  padding: 4px;
+  border-radius: 1.2rem;
+  background: linear-gradient(135deg, #0af, #08f, #0af);
+  animation: glowMove 5s linear infinite;
 }
 
-/* Optional label styling */
+@keyframes glowMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Card styling */
+.contact-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  color: rgb(10, 158, 243);
+  backdrop-filter: blur(12px);
+  transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-card:hover {
+  transform: scale(1.03);
+  background-color: rgba(10, 158, 243, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Labels & Values */
 .label {
-  font-weight: bold;
-  font-size: 2.5vh;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  margin-top: 1.5rem;
+  color: #8ce3ff;
+  letter-spacing: 1px;
+}
+
+.value {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  margin-top: 0.4rem;
+}
+
+/* Email link */
+a {
+  color: #8ce3ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Icons */
+.icon-line {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  color: #8ce3ff;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.1); opacity: 1; }
 }

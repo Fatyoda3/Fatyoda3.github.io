@@ -1,95 +1,171 @@
 body {
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Georgia', serif;
-    background-image: url("../assets/night.webp");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Georgia', serif;
+  background-image: url("../assets/night.webp");
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-/* Header */
+.story p,
+[class^="verse_"] {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transform: rotateZ(-1deg) translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.story p:nth-child(even),
+[class^="verse_"]:nth-of-type(even) {
+  transform: rotateZ(1deg) translateY(0);
+}
+
+.story p:hover,
+[class^="verse_"]:hover {
+  transform: scale(1.03) rotateZ(0deg) translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.story p,
+[class^="verse_"] {
+  margin-top: -1vh; /* overlaps slightly like a stack */
+  z-index: 1;
+}
+
+.story p:hover,
+[class^="verse_"]:hover {
+  z-index: 20;
+}
+
+/* HEADER */
 header {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 0, 255, 0.4);
-    border-radius: 25vh;
-    overflow: hidden;
-    color: rgb(0, 255, 217); /* Visible color */
-    font-size: 3vh;
-    transition: all 450ms ease-in;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 0, 255, 0.3);
+  border-radius: 25vh;
+  overflow: hidden;
+  color: rgb(0, 255, 217);
+  font-size: 3vh;
+  transition: all 450ms ease-in;
+  margin: 4vh auto;
+  width: fit-content;
+  padding: 1.5vh 3vw;
 }
 
 header:hover {
-    background: -webkit-linear-gradient(#eee, #59f306);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(#eee, #59f306);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Story Paragraph */
+/* STORY PARAGRAPH */
 .story p {
-    text-align: justify;
-    color: #13049b;
-    background-color: rgba(122, 159, 159, 0.7);
-    font-size: 3vh;
-    font-weight: 500;
-    word-spacing: 0.2vh;
-    border-top: 1vh solid aqua;
-    border-bottom: 1vh solid aqua;
-    padding: 15px;
-    border-radius: 3vh;
-    transition: all 450ms ease;
+  text-align: justify;
+  color: #13049b;
+  background-color: rgba(122, 159, 159, 0.6);
+  font-size: 2.5vh;
+  font-weight: 500;
+  word-spacing: 0.2vh;
+  border: 0.6vh solid aqua;
+  padding: 3vh;
+  border-radius: 3vh;
+  margin: 3vh auto;
+  max-width: 90vw;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.story p::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(135deg, #03f4fc, #0a1b85);
+  border-radius: 3vh;
+  z-index: -1;
+  opacity: 0.5;
+  animation: subtleGlow 6s ease-in-out infinite;
+  background-size: 200% 200%;
 }
 
 .story p:hover {
-    background: rgba(122, 159, 159, 0.1); 
-    color: #000;
-    transform: scale(0.96);
+  background-color: rgba(122, 159, 159, 0.2);
+  color: #000;
+  transform: scale(0.97);
 }
 
-/* Poem Container */
+/* POEM CONTAINER */
 .poem {
-    background-color: rgba(108, 179, 127, 0.5);
-    border-top: 2vh solid rgb(0, 17, 255);
-    border-bottom: 2vh solid rgb(0, 17, 255);
-    border-radius: 25vh;
-    font-size: 3vh;
-    text-align: center;
-    padding: 2vh;
-    transition: all 450ms ease-in;
+  background-color: rgba(108, 179, 127, 0.5);
+  border-top: 2vh solid rgb(0, 17, 255);
+  border-bottom: 2vh solid rgb(0, 17, 255);
+  border-radius: 25vh;
+  font-size: 2.5vh;
+  text-align: center;
+  padding: 3vh;
+  transition: all 450ms ease-in;
+  margin: 4vh auto;
+  max-width: 95vw;
 }
 
-/* Common Verse Style */
+.poem h2 {
+  color: #fff897;
+  font-size: 4vh;
+  margin-bottom: 2vh;
+}
+
+/* VERSE STYLING */
 [class^="verse_"] {
-    padding: 7%;
-    padding-bottom: 2%;
-    white-space: pre-wrap;
-    font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  padding: 3vh 2vw;
+  margin: 2vh auto;
+  border-radius: 2vh;
+  max-width: 90vw;
+  font-size: 2.2vh;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Specific Verse Colors */
-.verse_1,
-.verse_2 {
-    text-align: left;
-    color: orange;
+[class^="verse_"]::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(135deg, #ffffff, #00ffff, #ff00ff, #ffff00);
+  border-radius: 3vh;
+  z-index: -1;
+  opacity: 0.4;
+  background-size: 200% 200%;
+  animation: subtleGlow 7s ease infinite;
 }
 
-.verse_3,
-.verse_4 {
-    text-align: right;
-    color: rgb(105, 251, 7);
-}
+/* Individual Verse Colors */
+.verse_1 { color: #ffcc70; text-align: left; }
+.verse_2 { color: #ffaaff; text-align: left; }
+.verse_3 { color: #afffff; text-align: right; }
+.verse_4 { color: #bcff95; text-align: right; }
+.verse_5 { color: #a2a8d3; text-align: left; }
+.verse_6 { color: #f9f871; text-align: left; }
+.verse_7 { color: #fda4ba; text-align: right; }
+.verse_8 { color: #b0f2b4; text-align: right; }
 
-.verse_5,
-.verse_6 {
-    text-align: left;
-    color: blue;
-}
-
-.verse_7,
-.verse_8 {
-    text-align: right;
-    color: pink;
+/* ANIMATION */
+@keyframes subtleGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
